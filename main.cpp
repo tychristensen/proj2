@@ -45,15 +45,15 @@ int main()
 	while( true ) // basically, an infinite loop
 	{
 		// get the comand
-		cout << "Command (HH (human vs human), HA (human vs alpha), AA (alpha vs alpha), QUIT): " ;
+		cout << "Command (HH (human vs human), HA (human vs alpha), AA (alpha vs alpha), AB (alpha vs beta), QUIT): " ;
 		getline( cin, cmd ) ;
-		
+
 		// flush the cin buffer
 		cin.clear() ;
 		fflush(stdin);
 
 		// human vs human
-		if( cmd == "HH" ||      
+		if( cmd == "HH" ||
 			cmd == "hh" )
 		{
 			Game g1 ;   // create the game
@@ -89,6 +89,37 @@ int main()
 				cout << "Game aborted." << endl ;
 			}
 		}
+
+		// alpha vs beta
+		else if( cmd == "AB" ||
+		         cmd == "ab"  )
+        {
+		    Game g1;
+		    int result1, result2;
+
+		    g1.playGame(ALPHA,BETA, result1, result2, true);
+        }
+
+		//Test beta
+        else if( cmd == "Test" ||
+                 cmd == "test"  )
+        {
+            int aWins = 0;
+            int bWins = 0;
+            for(int i = 0; i < 1000; i++) {
+                Game g1;
+                int result1, result2;
+
+                g1.playGame(ALPHA, BETA, result1, result2, false);
+                if (result1 > result2) {
+                    aWins++;
+                } else {
+                    bWins++;
+                }
+            }
+            cout << "Alpha won " << aWins << " times" << endl;
+            cout << "Beta won " << bWins << " times" << endl;
+        }
 
 		// quit the program
 		else if( cmd == "quit" ||      

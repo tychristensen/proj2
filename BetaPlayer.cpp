@@ -27,18 +27,32 @@
 int BetaPlayer::getBet(Hand opponent, BetHistory bh, int bet2player, bool canraise, int pot)
 {
 
+    _sleep(0.1);
     srand(time(nullptr));
     int bet = 0 ;
     int delta = m_hand.evaluate() - opponent.evaluate() ;
     int nbets = bh.getCount() ;
     int ncards = m_hand.getCount() ;
+    int potFactor = pot / 10 ;
     //The variable hand factor measures the value of beta's hand versus the opponents hand
-    int handFactor = m_hand.evaluate() / opponent.evaluate() * 100;
-    //The chip ratio helps take into account the chip advantage or disadvantage
-    //This is a ratio of our chips over the total amount of chips owned by the beta
-    //and its opponent
-    int chipRatio = m_chips - (2000 - m_chips - pot) / m_chips + (2000 - m_chips - pot);
-    if( ncards < 5 ) {
+    int handFactor = 100 * ((double) m_hand.evaluate()) / opponent.evaluate();
+    int choice = handFactor;
+
+    if(choice >= 1000) {
+        bet = bet2player + 10;
+    } else if(choice >= 750) {
+        bet = bet2player + 7;
+    } else if(choice >= 500) {
+        bet = bet2player + 5;
+    } else if(choice >= 250) {
+        bet = bet2player + 2;
+    } else if(choice >= 30){
+        bet = bet2player;
+    } else {
+        bet = 0;
+    }
+
+    /*if( ncards < 5 ) {
         if( nbets == 0 ) {
             if( delta > 10 ) {
                 bet = (rand() % 6) + 5;
@@ -50,7 +64,6 @@ int BetaPlayer::getBet(Hand opponent, BetHistory bh, int bet2player, bool canrai
                 bet = 0 ;
             }
         } else {
-            int pot_factor = pot / 10 ;
             if( bet2player == 0 ) {
                 if( delta > 5 - pot_factor ) {
                     bet = (rand() % 6) + 5;
@@ -119,6 +132,7 @@ int BetaPlayer::getBet(Hand opponent, BetHistory bh, int bet2player, bool canrai
             }
         }
     }
+     */
     if( !canraise && bet > bet2player ) {
         bet = bet2player ;
     }
