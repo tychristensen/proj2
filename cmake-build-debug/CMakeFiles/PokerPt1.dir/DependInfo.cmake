@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Ty/Desktop/School/PokerPt1/AlphaPlayer.cpp" "C:/Users/Ty/Desktop/School/PokerPt1/cmake-build-debug/CMakeFiles/PokerPt1.dir/AlphaPlayer.cpp.obj"
-  "C:/Users/Ty/Desktop/School/PokerPt1/BetHistory.cpp" "C:/Users/Ty/Desktop/School/PokerPt1/cmake-build-debug/CMakeFiles/PokerPt1.dir/BetHistory.cpp.obj"
-  "C:/Users/Ty/Desktop/School/PokerPt1/BetaPlayer.cpp" "C:/Users/Ty/Desktop/School/PokerPt1/cmake-build-debug/CMakeFiles/PokerPt1.dir/BetaPlayer.cpp.obj"
-  "C:/Users/Ty/Desktop/School/PokerPt1/Game.cpp" "C:/Users/Ty/Desktop/School/PokerPt1/cmake-build-debug/CMakeFiles/PokerPt1.dir/Game.cpp.obj"
-  "C:/Users/Ty/Desktop/School/PokerPt1/Hand.cpp" "C:/Users/Ty/Desktop/School/PokerPt1/cmake-build-debug/CMakeFiles/PokerPt1.dir/Hand.cpp.obj"
-  "C:/Users/Ty/Desktop/School/PokerPt1/HumanPlayer.cpp" "C:/Users/Ty/Desktop/School/PokerPt1/cmake-build-debug/CMakeFiles/PokerPt1.dir/HumanPlayer.cpp.obj"
-  "C:/Users/Ty/Desktop/School/PokerPt1/Player.cpp" "C:/Users/Ty/Desktop/School/PokerPt1/cmake-build-debug/CMakeFiles/PokerPt1.dir/Player.cpp.obj"
-  "C:/Users/Ty/Desktop/School/PokerPt1/main.cpp" "C:/Users/Ty/Desktop/School/PokerPt1/cmake-build-debug/CMakeFiles/PokerPt1.dir/main.cpp.obj"
+  "/home/ty/Documents/proj2/AlphaPlayer.cpp" "/home/ty/Documents/proj2/cmake-build-debug/CMakeFiles/PokerPt1.dir/AlphaPlayer.cpp.o"
+  "/home/ty/Documents/proj2/BetHistory.cpp" "/home/ty/Documents/proj2/cmake-build-debug/CMakeFiles/PokerPt1.dir/BetHistory.cpp.o"
+  "/home/ty/Documents/proj2/BetaPlayer.cpp" "/home/ty/Documents/proj2/cmake-build-debug/CMakeFiles/PokerPt1.dir/BetaPlayer.cpp.o"
+  "/home/ty/Documents/proj2/Game.cpp" "/home/ty/Documents/proj2/cmake-build-debug/CMakeFiles/PokerPt1.dir/Game.cpp.o"
+  "/home/ty/Documents/proj2/Hand.cpp" "/home/ty/Documents/proj2/cmake-build-debug/CMakeFiles/PokerPt1.dir/Hand.cpp.o"
+  "/home/ty/Documents/proj2/HumanPlayer.cpp" "/home/ty/Documents/proj2/cmake-build-debug/CMakeFiles/PokerPt1.dir/HumanPlayer.cpp.o"
+  "/home/ty/Documents/proj2/Player.cpp" "/home/ty/Documents/proj2/cmake-build-debug/CMakeFiles/PokerPt1.dir/Player.cpp.o"
+  "/home/ty/Documents/proj2/main.cpp" "/home/ty/Documents/proj2/cmake-build-debug/CMakeFiles/PokerPt1.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

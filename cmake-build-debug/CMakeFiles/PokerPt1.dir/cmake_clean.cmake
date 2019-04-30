@@ -1,16 +1,14 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/PokerPt1.dir/main.cpp.obj"
-  "CMakeFiles/PokerPt1.dir/BetHistory.cpp.obj"
-  "CMakeFiles/PokerPt1.dir/Game.cpp.obj"
-  "CMakeFiles/PokerPt1.dir/Hand.cpp.obj"
-  "CMakeFiles/PokerPt1.dir/Player.cpp.obj"
-  "CMakeFiles/PokerPt1.dir/HumanPlayer.cpp.obj"
-  "CMakeFiles/PokerPt1.dir/AlphaPlayer.cpp.obj"
-  "CMakeFiles/PokerPt1.dir/BetaPlayer.cpp.obj"
+  "CMakeFiles/PokerPt1.dir/main.cpp.o"
+  "CMakeFiles/PokerPt1.dir/BetHistory.cpp.o"
+  "CMakeFiles/PokerPt1.dir/Game.cpp.o"
+  "CMakeFiles/PokerPt1.dir/Hand.cpp.o"
+  "CMakeFiles/PokerPt1.dir/Player.cpp.o"
+  "CMakeFiles/PokerPt1.dir/HumanPlayer.cpp.o"
+  "CMakeFiles/PokerPt1.dir/AlphaPlayer.cpp.o"
+  "CMakeFiles/PokerPt1.dir/BetaPlayer.cpp.o"
   "PokerPt1.pdb"
-  "PokerPt1.exe"
-  "PokerPt1.exe.manifest"
-  "libPokerPt1.dll.a"
+  "PokerPt1"
 )
 
 # Per-language clean rules from dependency scanning.

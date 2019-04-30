@@ -32,14 +32,20 @@ int BetaPlayer::getBet(Hand opponent, BetHistory bh, int bet2player, bool canrai
     int delta = m_hand.evaluate() - opponent.evaluate() ;
     int nbets = bh.getCount() ;
     int ncards = m_hand.getCount() ;
+    //The variable hand factor measures the value of beta's hand versus the opponents hand
+    int handFactor = m_hand.evaluate() / opponent.evaluate() * 100;
+    //The chip ratio helps take into account the chip advantage or disadvantage
+    //This is a ratio of our chips over the total amount of chips owned by the beta
+    //and its opponent
+    int chipRatio = m_chips - (2000 - m_chips - pot) / m_chips + (2000 - m_chips - pot);
     if( ncards < 5 ) {
         if( nbets == 0 ) {
             if( delta > 10 ) {
-                bet = 10 ;
+                bet = (rand() % 6) + 5;
             } else if( delta > 5 ) {
-                bet = 5 ;
+                bet = (rand() % 6);
             } else if( delta > 0 ) {
-                bet = 1 ;
+                bet = (rand() % 3);
             } else {
                 bet = 0 ;
             }
@@ -47,17 +53,17 @@ int BetaPlayer::getBet(Hand opponent, BetHistory bh, int bet2player, bool canrai
             int pot_factor = pot / 10 ;
             if( bet2player == 0 ) {
                 if( delta > 5 - pot_factor ) {
-                    bet = 10 ;
+                    bet = (rand() % 6) + 5;
                 } else if( delta > -pot_factor ) {
-                    bet = 1 ;
+                    bet = (rand() % 3);
                 } else {
                     bet = 0 ;
                 }
             } else if( bet2player < 1 + 2*pot_factor ) {
                 if( delta > 8 - pot_factor ) {
-                    bet = bet2player + 10 ;
+                    bet = bet2player + (rand() % 6) + 5;
                 } else if( delta > -2 - pot_factor ) {
-                    bet = bet2player + 1 ;
+                    bet = bet2player + (rand() % 3);
                 } else if( delta > -4 - pot_factor ) {
                     bet = bet2player ;
                 } else {
@@ -65,9 +71,9 @@ int BetaPlayer::getBet(Hand opponent, BetHistory bh, int bet2player, bool canrai
                 }
             } else {
                 if( delta > 10 - pot_factor ) {
-                    bet = bet2player + 10 ;
+                    bet = bet2player + (rand() % 6) + 5;
                 } else if( delta > -pot_factor ) {
-                    bet = bet2player + 1 ;
+                    bet = bet2player + (rand() % 3);
                 }
                 else if( delta > -2 - pot_factor ) {
                     bet = bet2player ;
@@ -79,7 +85,7 @@ int BetaPlayer::getBet(Hand opponent, BetHistory bh, int bet2player, bool canrai
     } else {
         if( nbets == 0 ) {
             if( delta > 10 ) {
-                bet = 10 ;
+                bet = (rand() % 6) + 5;
             } else if( delta > 5 ) {
                 bet = 5 ;
             }
