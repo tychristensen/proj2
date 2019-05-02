@@ -27,112 +27,39 @@
 int BetaPlayer::getBet(Hand opponent, BetHistory bh, int bet2player, bool canraise, int pot)
 {
 
-    _sleep(0.1);
-    srand(time(nullptr));
+    random_device rd;
     int bet = 0 ;
     int delta = m_hand.evaluate() - opponent.evaluate() ;
     int nbets = bh.getCount() ;
     int ncards = m_hand.getCount() ;
     int potFactor = pot / 10 ;
     //The variable hand factor measures the value of beta's hand versus the opponents hand
-    int handFactor = 100 * ((double) m_hand.evaluate()) / opponent.evaluate();
-    int choice = handFactor;
+    double handFactor = 10.0 * ((double) m_hand.evaluate()) / opponent.evaluate();
 
-    if(choice >= 1000) {
-        bet = bet2player + 10;
-    } else if(choice >= 750) {
-        bet = bet2player + 7;
-    } else if(choice >= 500) {
-        bet = bet2player + 5;
-    } else if(choice >= 250) {
-        bet = bet2player + 2;
-    } else if(choice >= 30){
-        bet = bet2player;
-    } else {
+
+
+    if (handFactor <= 3.0) {
         bet = 0;
+    } else if (handFactor <= 10.0) {
+        if(rd() % 1000 < 1) {
+            //Bluff
+            bet = bet2player + 10;
+        } else {
+            bet = bet2player + 0;
+        }
+    } else if (handFactor <= 12.0) {
+        if(rd() % 1000 < 1) {
+            //Bluff
+            bet = bet2player + 10;
+        } else {
+            bet = bet2player + 3;
+        }
+    } else if (handFactor <= 15.0) {
+        bet = bet2player + 5;
+    } else {
+        bet = bet2player + 10;
     }
 
-    /*if( ncards < 5 ) {
-        if( nbets == 0 ) {
-            if( delta > 10 ) {
-                bet = (rand() % 6) + 5;
-            } else if( delta > 5 ) {
-                bet = (rand() % 6);
-            } else if( delta > 0 ) {
-                bet = (rand() % 3);
-            } else {
-                bet = 0 ;
-            }
-        } else {
-            if( bet2player == 0 ) {
-                if( delta > 5 - pot_factor ) {
-                    bet = (rand() % 6) + 5;
-                } else if( delta > -pot_factor ) {
-                    bet = (rand() % 3);
-                } else {
-                    bet = 0 ;
-                }
-            } else if( bet2player < 1 + 2*pot_factor ) {
-                if( delta > 8 - pot_factor ) {
-                    bet = bet2player + (rand() % 6) + 5;
-                } else if( delta > -2 - pot_factor ) {
-                    bet = bet2player + (rand() % 3);
-                } else if( delta > -4 - pot_factor ) {
-                    bet = bet2player ;
-                } else {
-                    bet = 0 ;
-                }
-            } else {
-                if( delta > 10 - pot_factor ) {
-                    bet = bet2player + (rand() % 6) + 5;
-                } else if( delta > -pot_factor ) {
-                    bet = bet2player + (rand() % 3);
-                }
-                else if( delta > -2 - pot_factor ) {
-                    bet = bet2player ;
-                } else {
-                    bet = 0 ;
-                }
-            }
-        }
-    } else {
-        if( nbets == 0 ) {
-            if( delta > 10 ) {
-                bet = (rand() % 6) + 5;
-            } else if( delta > 5 ) {
-                bet = 5 ;
-            }
-            else {
-                bet = 0 ;
-            }
-        } else {
-            int pot_factor = pot / 10 ;
-            if( bet2player == 0 ) {
-                if( delta > 10 - pot_factor ) {
-                    bet = 10 ;
-                } else {
-                    bet = 0 ;
-                }
-            } else if( bet2player < 1 + 2*pot_factor ) {
-                if( delta > 6 - pot_factor ) {
-                    bet = bet2player + 10 ;
-                } else if( delta > 2 ) {
-                    bet = bet2player ;
-                } else {
-                    bet = 0 ;
-                }
-            } else {
-                if( delta > 8 - pot_factor ) {
-                    bet = bet2player + 10 ;
-                } else if( delta > 4 ) {
-                    bet = bet2player ;
-                } else {
-                    bet = 0 ;
-                }
-            }
-        }
-    }
-     */
     if( !canraise && bet > bet2player ) {
         bet = bet2player ;
     }

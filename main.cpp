@@ -106,6 +106,8 @@ int main()
         {
             int aWins = 0;
             int bWins = 0;
+            int aChips = 0;
+            int bChips = 0;
             for(int i = 0; i < 1000; i++) {
                 Game g1;
                 int result1, result2;
@@ -116,9 +118,13 @@ int main()
                 } else {
                     bWins++;
                 }
+                aChips += result1;
+                bChips += result2;
             }
             cout << "Alpha won " << aWins << " times" << endl;
             cout << "Beta won " << bWins << " times" << endl;
+            cout << "Alpha won an average of " << aChips / 1000 << " chips" << endl;
+            cout << "Beta won an average of " << bChips / 1000 << " chips" << endl;
         }
 
 		// quit the program

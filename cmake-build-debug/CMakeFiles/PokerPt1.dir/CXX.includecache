@@ -6,43 +6,45 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Ty/Desktop/School/PokerPt1/Bet.h
+/home/ty/Documents/proj2/Bet.h
 
-C:/Users/Ty/Desktop/School/PokerPt1/BetHistory.h
+/home/ty/Documents/proj2/BetHistory.h
 constants.h
-C:/Users/Ty/Desktop/School/PokerPt1/constants.h
+/home/ty/Documents/proj2/constants.h
 Bet.h
-C:/Users/Ty/Desktop/School/PokerPt1/Bet.h
+/home/ty/Documents/proj2/Bet.h
 
-C:/Users/Ty/Desktop/School/PokerPt1/BetaPlayer.cpp
+/home/ty/Documents/proj2/BetaPlayer.cpp
 BetaPlayer.h
-C:/Users/Ty/Desktop/School/PokerPt1/BetaPlayer.h
+/home/ty/Documents/proj2/BetaPlayer.h
 
-C:/Users/Ty/Desktop/School/PokerPt1/BetaPlayer.h
+/home/ty/Documents/proj2/BetaPlayer.h
 Player.h
-C:/Users/Ty/Desktop/School/PokerPt1/Player.h
-stdlib.h
+/home/ty/Documents/proj2/Player.h
+cstdlib
 -
 time.h
 -
+random
+-
 
-C:/Users/Ty/Desktop/School/PokerPt1/Card.h
+/home/ty/Documents/proj2/Card.h
 string
 -
 
-C:/Users/Ty/Desktop/School/PokerPt1/Hand.h
+/home/ty/Documents/proj2/Hand.h
 Card.h
-C:/Users/Ty/Desktop/School/PokerPt1/Card.h
+/home/ty/Documents/proj2/Card.h
 constants.h
-C:/Users/Ty/Desktop/School/PokerPt1/constants.h
+/home/ty/Documents/proj2/constants.h
 
-C:/Users/Ty/Desktop/School/PokerPt1/Player.h
+/home/ty/Documents/proj2/Player.h
 Hand.h
-C:/Users/Ty/Desktop/School/PokerPt1/Hand.h
+/home/ty/Documents/proj2/Hand.h
 BetHistory.h
-C:/Users/Ty/Desktop/School/PokerPt1/BetHistory.h
+/home/ty/Documents/proj2/BetHistory.h
 constants.h
-C:/Users/Ty/Desktop/School/PokerPt1/constants.h
+/home/ty/Documents/proj2/constants.h
 
-C:/Users/Ty/Desktop/School/PokerPt1/constants.h
+/home/ty/Documents/proj2/constants.h
 

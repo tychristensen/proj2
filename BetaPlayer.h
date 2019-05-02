@@ -6,8 +6,9 @@
 #define POKERPT1_BETAPLAYER_H
 
 #include "Player.h"
-#include <stdlib.h>
+#include <cstdlib>
 #include <time.h>
+#include <random>
 
 class BetaPlayer : public Player {
 public:
